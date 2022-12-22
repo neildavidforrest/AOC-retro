@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-12-22 Thu 12:06 -->
+<!-- 2022-12-22 Thu 12:16 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>🎄🖥 Core Retro 210: Advent of Code 🖥🎄</title>
@@ -201,15 +201,15 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org76f567f">1. Background</a></li>
-<li><a href="#org198e6ec">2. The idea</a></li>
-<li><a href="#org8488b51">3. Problem: Part 1</a></li>
+<li><a href="#org8bf3899">1. Background</a></li>
+<li><a href="#org2ddb118">2. The idea</a></li>
+<li><a href="#orgbec45bf">3. Problem: Part 1</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org76f567f" class="outline-2">
-<h2 id="org76f567f"><span class="section-number-2">1.</span> Background</h2>
+<div id="outline-container-org8bf3899" class="outline-2">
+<h2 id="org8bf3899"><span class="section-number-2">1.</span> Background</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li><a href="https://adventofcode.com/2022">Advent of Code</a> is an advent calendar of programming puzzles created by Eric Wastl</li>
@@ -220,8 +220,8 @@
 </div>
 </div>
 
-<div id="outline-container-org198e6ec" class="outline-2">
-<h2 id="org198e6ec"><span class="section-number-2">2.</span> The idea</h2>
+<div id="outline-container-org2ddb118" class="outline-2">
+<h2 id="org2ddb118"><span class="section-number-2">2.</span> The idea</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>This is fun; but being purely text based has its limitations</li>
@@ -230,8 +230,8 @@
 </div>
 </div>
 
-<div id="outline-container-org8488b51" class="outline-2">
-<h2 id="org8488b51"><span class="section-number-2">3.</span> Problem: Part 1</h2>
+<div id="outline-container-orgbec45bf" class="outline-2">
+<h2 id="orgbec45bf"><span class="section-number-2">3.</span> Problem: Part 1</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 It&rsquo;s late on Christmas Eve. You are relaxing with the elves at the North Pole. Everyone is exhausted from the last minute push to meet the Christmas deadlines but there&rsquo;s still a low key a party atmosphere developing amongst the elves. Santa left several hours ago and is no doubt at this very moment squeezing his hefty frame down yet another inadequately sized chimney in the line of duty.
@@ -243,11 +243,15 @@ Just as you are about to pour yourself another sickly eggnog that elves seem so 
 
 <p>
 The text below the image reads:
+</p>
+<blockquote>
+<p>
 &ldquo;URGENT: I&rsquo;ve just found this Christmas letter from Neil down the side of the seat in the sleigh, I must have missed it before. Please send me this gift ASAP! We don&rsquo;t have long until morning.&rdquo;
 </p>
+</blockquote>
 
 
-<div id="org4eaee79" class="figure">
+<div id="org2c4319f" class="figure">
 <p><img src="images/encoded.png" alt="encoded.png" />
 </p>
 </div>
@@ -268,14 +272,14 @@ The encoded image is a PNG file with 4 8-bit channels: RGBA. So each pixel has 4
 <li>A random key is generated and is stored in the alpha channel of the image</li>
 <li>The RGB channels of the original image are combined with the key in the A channel to encrypt them in the following way:
 <ol class="org-ol">
-<li>For the RED channel, the key is multiplied by 100 before being added to the original value, i.e.: encoded.r = orig.r + 100*orig.a. If the result is bigger that 255, then it wraps around again to 0.</li>
+<li>For the RED channel, the key is multiplied by 100 before being added to the original value, i.e.: <code>encoded.r = orig.r + 100*orig.a</code>. If the result is bigger that 255, then it wraps around again to 0.</li>
 <li>The GREEN channel follows the same process, but first the key is bit shifted to the LEFT by 1 bit</li>
 <li>The BLUR channel follows the same process, but first the key is bit shifted to the RIGHT by 1 bit</li>
 </ol></li>
 </ol>
 
 <p>
-For example, consider a single pixel value `(123, 12, 34, 132)`.
+For example, consider a single pixel value <code>(123, 12, 34, 132)</code>.
 </p>
 
 <p>
@@ -297,7 +301,7 @@ All you need to do to decode the image is to reverse these steps. What is the gi
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Neil Forrest</p>
-<p class="date">Created: 2022-12-22 Thu 12:06</p>
+<p class="date">Created: 2022-12-22 Thu 12:16</p>
 </div>
 </body>
 </html>

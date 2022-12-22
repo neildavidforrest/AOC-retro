@@ -20,7 +20,9 @@ It's late on Christmas Eve. You are relaxing with the elves at the North Pole. E
 Just as you are about to pour yourself another sickly eggnog that elves seem so fond of... You receive an urgent message from Santa on your communications device. In your excitement you accidentally spill your sticky raw egg based beverage all over the primitive device. When you look at the screen you find to your horror that the device is malfunctioning. The message (an image and your *puzzle input*) is visible on the screen, but the device is unable to decipher Santa's top secret encryption algorithm and as such the image is completely unintelligible.
 
 The text below the image reads:
+#+begin_quote
 "URGENT: I've just found this Christmas letter from Neil down the side of the seat in the sleigh, I must have missed it before. Please send me this gift ASAP! We don't have long until morning."
+#+end_quote
 
 [[file:images/encoded.png]]
 
@@ -32,11 +34,11 @@ The encoded image is a PNG file with 4 8-bit channels: RGBA. So each pixel has 4
 
 1. A random key is generated and is stored in the alpha channel of the image
 2. The RGB channels of the original image are combined with the key in the A channel to encrypt them in the following way:
-   1. For the RED channel, the key is multiplied by 100 before being added to the original value, i.e.: encoded.r = orig.r + 100*orig.a. If the result is bigger that 255, then it wraps around again to 0.
+   1. For the RED channel, the key is multiplied by 100 before being added to the original value, i.e.: ~encoded.r = orig.r + 100*orig.a~. If the result is bigger that 255, then it wraps around again to 0.
    2. The GREEN channel follows the same process, but first the key is bit shifted to the LEFT by 1 bit
    3. The BLUR channel follows the same process, but first the key is bit shifted to the RIGHT by 1 bit
 
-For example, consider a single pixel value `(123, 12, 34, 132)`.
+For example, consider a single pixel value ~(123, 12, 34, 132)~.
 
 The encoded value would be:
 
