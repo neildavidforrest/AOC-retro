@@ -51,9 +51,11 @@ The encoded value would be:
 
 All you need to do to decode the image is to reverse these steps. What is the gift you need to send?
 
-* Problem: Part 2 :noexport:
+* Problem: Part 2
 
-Coming soon...
+Oh no! A crucial piece of information is missing! Being a highly suspicious and unstable conspiracy theorist, believing that all communication channels are being observed by Grinch (who is intent on ruining Christmas), he encrypted some information before sending his letter to Santa.
+
+You'll have to apply what you've learned already to decode it. What is the missing information?
 
 * Solution :noexport:
 
