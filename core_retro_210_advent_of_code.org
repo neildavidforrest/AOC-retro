@@ -28,7 +28,7 @@ The text below the image reads:
 
 You'll need to decode the message yourself to discover what Christmas gift Neil wanted.
 
-Luckily you overheard the elves discussion how Santa's device encodes images.
+Luckily you overheard the elves discussing how Santa's device encodes images.
 
 The encoded image is a PNG file with 4 8-bit channels: RGBA. So each pixel has 4 values between 0-255.
 
@@ -36,7 +36,7 @@ The encoded image is a PNG file with 4 8-bit channels: RGBA. So each pixel has 4
 2. The RGB channels of the original image are combined with the key in the A channel to encrypt them in the following way:
    1. For the RED channel, the key is multiplied by 100 before being added to the original value, i.e.: ~encoded.r = orig.r + 100*orig.a~. If the result is bigger that 255, then it wraps around again to 0.
    2. The GREEN channel follows the same process, but first the key is bit shifted to the LEFT by 1 bit
-   3. The BLUR channel follows the same process, but first the key is bit shifted to the RIGHT by 1 bit
+   3. The BLUE channel follows the same process, but first the key is bit shifted to the RIGHT by 1 bit
 
 For example, consider a single pixel value ~(123, 12, 34, 132)~.
 
